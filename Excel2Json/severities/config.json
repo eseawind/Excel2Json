@@ -1,0 +1,21 @@
+{
+excel:{
+	0:"ZoneId",
+	3:"RelatedZones",
+	4:"ImageGroup",
+	5:"QuestionGroup",
+	6:"Description",
+	7:"FollowUpQuestionGroup",
+	8:"HighSeverity",
+	_skipFirstRow:"true",
+	_multiRecordFields:["ZoneId", "RelatedZones"],
+	_recordSeparator:"ZoneId",
+	_types:	{"RelatedZones":"array"}
+},
+aggregate:{
+	_pivotField:"ZoneId",
+	_extractFields:["ZoneId", "RelatedZones"],
+	_retainFields: false,
+	_groupField:"Options"
+}
+}
