@@ -18,24 +18,24 @@ public class Excel2Json {
 		xReader = new ExcelReader(config.getExcelConfiguration());
 	}
 
-	private JSONObject transform(String inputFile) throws InvalidFormatException, IOException {
+	private JSONArray transform(String inputFile) throws InvalidFormatException, IOException {
 		JSONArray ja = xReader.getJSON(inputFile);
 		
 		JSONAggregator aggregator = new JSONAggregator(config.getAggregationConfig());
-		JSONObject jo = aggregator.process(ja);
+		JSONArray jo = aggregator.process(ja);
 		return jo;
 	}
 	
 	public static void main(String[] args) throws IOException,
 			InvalidFormatException {
 
-		String inputFile = args[0];
-		String configFile = args[1];
+		String configFile = args[0];
+		String inputFile = args[1];
 		
 		Excel2Json x = new Excel2Json(configFile);
-		JSONObject jo = x.transform(inputFile);
+		JSONArray ja = x.transform(inputFile);
 		
-		System.out.println(jo);
+		System.out.println(ja.toString(3));
 
 	}
 

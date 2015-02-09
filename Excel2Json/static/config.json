@@ -2,9 +2,12 @@
 excel:{
 	0:"COL1",
 	2:"COL3",
-	_skipFirstRow:true
+	_multiRecordFields:["COL1"],
+	_skipFirstRow:"true"
 },
 aggregate:{
-	_pivotField:"COL1"
+	_pivotField:"COL1",
+	_extractFields:["COL1"],
+	_groupField:"ELEMENTS"
 }
 }
