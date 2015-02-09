@@ -1,5 +1,6 @@
 package com.io17.excel2json;
 
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -31,12 +32,15 @@ public class Excel2Json {
 
 		String configFile = args[0];
 		String inputFile = args[1];
+		String outputFile = args[2];
 		
 		Excel2Json x = new Excel2Json(configFile);
 		JSONArray ja = x.transform(inputFile);
 		
-		System.out.println(ja.toString(3));
-
+		FileWriter fileWriter = new FileWriter(outputFile); 
+		ja.write(fileWriter);
+		fileWriter.flush();
+		fileWriter.close();
 	}
 
 }
