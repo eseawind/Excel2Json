@@ -1,0 +1,10 @@
+{
+excel:{
+	0:"COL1",
+	2:"COL3",
+	_skipFirstRow:true
+},
+aggregate:{
+	_pivotField:"COL1"
+}
+}
